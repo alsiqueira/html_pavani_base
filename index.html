@@ -15,45 +15,73 @@
 
   <script>
     window.onload = function () {
-    
-    // Construct options first and then pass it as a parameter
-    var options1 = {
-      animationEnabled: true,
-      title: {
-        text: "Faturamento Franqueado",
 
-      },
-      data: [{
-        type: "bar", //change it to line, area, , pie, etc, column, bar
-        legendText: "",
-        showInLegend: false,
-        dataPoints: [
-          { y: 10, label: "cliente 1" },
-          { y: 6, label: "cliente 2" },
-          { y: 14, label: "cliente 3" },
-          { y: 12, label: "cliente 4" },
-          { y: 19, label: "cliente 5" },
-          { y: 14, label: "cliente 6" },
-          { y: 26, label: "cliente 7" },
-          { y: 10, label: "cliente 8" },
-          { y: 22, label: "cliente 9" }
-          ]
-        }]
-    };
-    
-    $("#resizable").resizable({
-      create: function (event, ui) {
-        //Create chart.
-        $("#chartContainer1").CanvasJSChart(options1);
-      },
-      resize: function (event, ui) {
-        //Update chart size according to its container size.
-        $("#chartContainer1").CanvasJSChart().render();
-      }
-    });
-    
-    }
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Faturamento data atual"
+	},
+	axisY: {
+		title: "R$"
+	},
+	data: [{        
+		type: "pie",  //column
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "",
+		dataPoints: [      
+			{ y: 300878, label: "Cliente 1" },
+			{ y: 266455,  label: "Cliente 2" },
+			{ y: 169709,  label: "Cliente 3" },
+			{ y: 158400,  label: "Cliente 4" },
+			{ y: 142503,  label: "Cliente 5" },
+			{ y: 101500, label: "Cliente 6" },
+			{ y: 97800,  label: "Cliente 7" },
+			{ y: 80000,  label: "Cliente 8" }
+		]
+	}]
+});
+chart.render();
+
+}
     </script>
+
+<script>
+  window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainerColumn", {
+animationEnabled: true,
+theme: "light2", // "light1", "light2", "dark1", "dark2"
+title:{
+  text: "Faturamento data atual"
+},
+axisY: {
+  title: "R$"
+},
+data: [{        
+  type: "column",  //column
+  showInLegend: true, 
+  legendMarkerColor: "grey",
+  legendText: "",
+  dataPoints: [      
+    { y: 300878, label: "Cliente 1" },
+    { y: 266455,  label: "Cliente 2" },
+    { y: 169709,  label: "Cliente 3" },
+    { y: 158400,  label: "Cliente 4" },
+    { y: 142503,  label: "Cliente 5" },
+    { y: 101500, label: "Cliente 6" },
+    { y: 97800,  label: "Cliente 7" },
+    { y: 80000,  label: "Cliente 8" }
+  ]
+}]
+});
+chart.render();
+
+}
+  </script>
+
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -127,150 +155,139 @@
 
     <section class="content">
       <div class="container-fluid">
-        <div class="row">
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>R$ 5.348,00</h3>
-
-                <p>Cliente 1</p>
+        <div class="card">
+          <div class="card-header justify-">
+         
+              
+                <ul class="pagination justify-content-end">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Próximo</a>
+                  </li>
+                </ul>
+           
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>R$ 5.348,00</h3>
+                    <p>Cliente 1</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-bag"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
               </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
+
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>R$ 5.348,00</h3>
+                    <p>Cliente 1</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-bag"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
               </div>
-              <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
+
+
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>R$ 5.348,00</h3>
+                    <p>Cliente 1</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-bag"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+
+
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>R$ 5.348,00</h3>
+                    <p>Cliente 1</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-bag"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+
+
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>R$ 5.348,00</h3>
+                    <p>Cliente 1</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-bag"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+
+
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>R$ 5.348,00</h3>
+                    <p>Cliente 1</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-bag"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>R$ 5.348,00</h3>
-
-                <p>Cliente 2</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>R$ 5.348,00</h3>
-
-                <p>Cliente 3</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>R$ 5.348,00</h3>
-
-                <p>Cliente 4</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>R$ 5.348,00</h3>
-
-                <p>Cliente 5</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>R$ 5.348,00</h3>
-
-                <p>Cliente 6</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>R$ 5.348,00</h3>
-
-                <p>Cliente 7</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>R$ 5.348,00</h3>
-
-                <p>Cliente 8</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">Faturamento Analitico <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          
         </div>
-
-
       </div>
     </section>
 
     <section class="content">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex">
+          <h3 class="card-title ">
+            <i class="fas fa-chart-pie mr-1"></i>
+            Graficos
+          </h3>
           <h3 class="card-title">
             <i class="fas fa-chart-pie mr-1"></i>
             Graficos
           </h3>
-         
+          <h3 class="card-title">
+            <i class="fas fa-chart-pie mr-1"></i>
+            Graficos
+          </h3>
         </div>
         <div class="card-body">
           <div id="resizable" style="height: 370px;border:1px solid gray;">
-            <div id="chartContainer1" style="height: 100%; width: 100%;"></div>
-          </div>
-        </div>
+            <div id="chartContainerColumn" style="height: 100%; width: 100%;"></div>
+           </div>
+      <div id="resizable" style="height: 370px;border:1px solid gray;">
+            <div id="chartContainerPie" style="height: 100%; width: 100%;"></div>
+           
+          </div> 
+
           
-       
+        </div>
       </div>
     
     </section>
@@ -338,12 +355,7 @@
             <td>Unidade 8</td>
             <td><a  href="#" role="button"><i class="fas fa-check text-success "></i> <i class="fas fa-edit text-warning "></i> <i class="fas fa-trash text-danger "></i></a></td>
           </tr>
-          <tr>
-            <th scope="row">9</th>
-            <td>Cliente 9</td>
-            <td>Unidade 9</td>
-            <td><a  href="#" role="button"><i class="fas fa-check text-success "></i> <i class="fas fa-edit text-warning "></i> <i class="fas fa-trash text-danger "></i></a></td>
-          </tr>
+          
         </tbody>
       </table>
 
